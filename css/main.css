@@ -1,0 +1,48 @@
+:root {
+  --main-color: #10cab7;
+  --secondary-color: #2c4755;
+  --section-padding: 60px;
+  --section-background: #f6f6f6;
+  --main-duration: 0.5s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+header {
+  padding: 20px;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+
+.logo {
+    padding: 10px;
+}
+
+.logo :nth-child(1) {
+    width: 3px;
+    height: 25px;
+    display: inline-block;
+    background-color: var(--secondary-color);
+    margin-right: 2.5px;
+}
+
+.logo :nth-child(2) {
+    border: solid 5px var(--main-color);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    display: inline-block;
+}
+
+
