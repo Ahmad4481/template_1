@@ -12,6 +12,7 @@
 
 body {
   font-family: "Work Sans", sans-serif;
+  text-transform: capitalize;
 }
 
 header {
@@ -45,4 +46,37 @@ header {
     display: inline-block;
 }
 
+.icons {
+  display: inline-flex;
+  height: 21px;
+  flex-flow: column-reverse wrap;
+  align-items: flex-end;
+}
 
+.icons span{
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  margin-bottom: 5px;
+  transition: 0.5s linear ;
+}
+
+.icons :nth-child(2) {
+  width: 18px;
+}
+
+.icons:hover :nth-child(2) {
+  width: 30px;
+}
+
+.links ul li {
+  list-style: none;
+  background-color: #f6f6f6;
+  min-width: 200px;
+  height: fit-content;
+}
+
+.links ul li a {
+  color:black;
+  text-decoration: none;
+}
