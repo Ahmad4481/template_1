@@ -17,31 +17,30 @@ html {
 }
 
 body {
-  font-family: "Work Sans", sans-serif;
-  text-transform: capitalize;
+  font-family: "Work Sans", sans-serif !important;
 }
 
+/* start header */
 header {
-  padding: 10px;
+  padding: 20px;
 }
 
 .container {
   padding: 0 15px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
 .logo {
-  padding: 10px;
-  display: inline-block;
-  translate: -200px;
+  width: 60px;
 }
 
 .logo :nth-child(1) {
-  width: 4px;
-  height: 22.5px;
+  width: 3.5px;
+  height: 20px;
   display: inline-block;
   background-color: var(--secondary-color);
   margin-right: 2.5px;
@@ -50,16 +49,15 @@ header {
 .logo :nth-child(2) {
   border: solid 4px var(--main-color);
   border-radius: 50%;
-  width: 22.5px;
-  height: 22.5px;
+  width: 20px;
+  height: 20px;
   background-color: white;
   display: inline-block;
 }
 
 
 .icons {
-  display: inline-flex;
-  height: 21px;
+  display: flex;
   flex-flow: column wrap;
   align-items: flex-end;
 }
@@ -75,8 +73,17 @@ header {
 
 .links {
   position: relative;
-  translate: 170px;
-  margin-top: -1px;
+}
+
+header .container .links ul::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  position: absolute;
+  top: -20px;
+  right: 5px;
+  border-color: transparent transparent #f6f6f6 transparent;
 }
 
 .icons :nth-child(2) {
@@ -89,13 +96,13 @@ header {
 
 header .container .links ul {
   position: absolute;
-  left: -175px;
-  top: 50px;
-  bottom: -20px;
+  left: -170px;
+  top: 37.5px;
   display: none;
+  height: fit-content;
 }
 
-header .container .links:hover ul{
+header .container .links:hover ul {
   display: inline-block;
 }
 
@@ -103,17 +110,72 @@ header .container .links:hover ul{
   list-style: none;
   background-color: #f6f6f6;
   width: 200px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ddd;
   padding: 15px;
 }
 
-.links ul li a {
-  color: black;
+.links ul li a{
+  color: #333;
   text-decoration: none;
   transition: var(--main-duration);
 }
 
-header .container .links li:hover a{
+header .container .links li:hover a {
   padding-left: 10px;
 }
-/* nice */
+
+@media (min-width:768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width:992px) {
+  .container {
+    width: 770px;
+  }
+}
+
+@media (min-width:1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+section {
+  padding: var(--section-padding) 0;
+  background-color: #f6f6f6;
+}
+
+/* end header */
+/* start intro section */
+.intro {
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_One/images/landing.jpg);
+  background-size: cover;
+  height: calc(100vb - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+
+.intro h1 {
+  color: var(--main-color);
+  font-size: 50px !important;
+  margin: 0 !important;
+  font-weight: bold;
+}
+.intro p {
+  font-size: 19px;
+  line-height: 180%;
+  margin: 19px 0;
+  text-align: center;
+  width: 320px;
+}
+/* end intro */
+/* start features */
+/* color icons */
+i {
+  color: var(--main-color);
+}
