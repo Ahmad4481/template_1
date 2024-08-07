@@ -300,6 +300,8 @@ section.intro {
   align-items: center;
 }
 
+@media (max-width: 1199px) { .image-column { display: none; } }
+
 .col span {
   content: "";
   background-color: var(--secondary-color);
