@@ -23,8 +23,6 @@ body {
 /* start header */
 header {
   padding: 20px;
-  position: fixed;
-  z-index: -999;
   background-color: white;
   width: 100%;
   top: 0;
@@ -148,7 +146,6 @@ header .container .links li:hover a {
 }
 
 section.intro {
-  margin-top: 65px;
   padding: var(--section-padding) 0;
   background-color: #f6f6f6;
 }
