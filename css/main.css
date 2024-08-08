@@ -262,7 +262,11 @@ section.intro {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
+  }
+  .col div h3 {
+    margin-right: 25px;
   }
 }
 
