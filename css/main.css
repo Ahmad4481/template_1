@@ -25,7 +25,6 @@ header {
   padding: 20px;
   background-color: white;
   width: 100%;
-  top: 0;
 }
 
 .container {
@@ -58,18 +57,7 @@ header .container {
 }
 
 .links {
-  position: relative;
-}
-
-header .container .links ul::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border: solid 10px;
-  position: absolute;
-  top: -20px;
-  right: 5px;
-  border-color: transparent transparent #f6f6f6 transparent;
+  z-index: 1;
 }
 
 .icons :nth-child(2) {
@@ -88,10 +76,20 @@ header .container .links ul {
   background-color: #f6f6f6;
   width: 200px;
   list-style: none;
+  overflow: hidden;
 }
 
 header .container .links:hover ul {
+  animation: chan-display .5s forwards ease-in-out;
+  transition: var(--main-duration);
   display: inline-block;
+  height: 0;
+}
+
+@keyframes chan-display {
+  to {
+    height: 196.8px;
+  }
 }
 
 .links ul li a {
@@ -104,7 +102,7 @@ header .container .links:hover ul {
   background-color: transparent;
 }
 
-header .container .links li:hover a{
+header .container .links li:hover a {
   padding-left: 25px;
 }
 
@@ -126,13 +124,13 @@ header .container .links li:hover a{
   }
 }
 
+/* end header */
+/* start intro section */
 section.intro {
   padding: var(--section-padding) 0;
   background-color: #f6f6f6;
 }
 
-/* end header */
-/* start intro section */
 .intro {
   background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_One/images/landing.jpg);
   background-size: cover;
@@ -141,7 +139,20 @@ section.intro {
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
+  opacity: 0;
+  animation: flow 1s forwards ease-in-out;
 }
+@keyframes flow {
+  form {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
 
 .intro h1 {
   color: var(--main-color);
@@ -262,7 +273,12 @@ section.intro {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
+  }
+
+  .col div h3 {
+    margin-right: 25px;
   }
 }
 
@@ -291,10 +307,22 @@ section.intro {
   z-index: 1;
 }
 
+.col-image::after {
+  content: '';
+  height: 450px;
+  position: absolute;
+  width: 100px;
+  background-color: var(--secondary-color);
+  top: -13%;
+  right: 0px;
+}
+
 .col-image {
   position: relative;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center !important;
+  align-items: flex-start;
+
 }
 
 @media (max-width: 1199px) {
@@ -336,6 +364,14 @@ section.intro {
 
 .portfolio img {
   max-width: 100%;
+}
+
+.portfolio-content div {
+  transition: var(--main-duration);
+}
+
+.portfolio-content div:hover {
+  scale: 1.015;
 }
 
 .portfolio p {
@@ -482,6 +518,11 @@ section.intro {
   font-size: 35px;
   text-align: center;
   display: block;
+  transition: var(--main-duration);
+}
+
+.label-p+a:hover {
+  scale: 1.02;
 }
 
 @media (max-width:767px) {
